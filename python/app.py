@@ -3,6 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
+   return "hiii"
 @app.route("/python")
 def home():
     return "Hello from Python App 🚀"
