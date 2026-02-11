@@ -3,13 +3,16 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-   return "hiii"
-@app.route("/python")
-def home():
+def root():
+    return "hiii"
+
+@app.route('/python')
+def python_app():
     return "Hello from Python App 🚀"
 
 @app.route('/health')
 def health():
     return "OK", 200
 
-app.run(host="0.0.0.0", port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
