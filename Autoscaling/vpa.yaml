@@ -33,4 +33,4 @@ spec:
     kind: Deployment
     name: vpa-demo
   updatePolicy:
-    updateMode: "Auto"
+    updateMode: "Recreate"
