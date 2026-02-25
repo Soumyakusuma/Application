@@ -29,7 +29,11 @@ spec:
           tcpSocket:
             port: 80
           initialDelaySeconds: 3
-          periodSeconds: 10
+          periodSeconds: 5
+          httpGet:
+            path: /healy
+            port: 80
+          failureThreshold: 3
         readinessProbe:
           httpGet:
             path: /
