@@ -27,7 +27,7 @@ spec:
         image: nginx:1.14.2
         livenessProbe:
           tcpSocket:
-            port: 8080
+            port: 80
           initialDelaySeconds: 3
           periodSeconds: 10
         readinessProbe:
