@@ -3,7 +3,7 @@ kind: ClusterConfig
 metadata:
   name: practice
   region: us-east-1
-nodeGroups:
+managedNodeGroups:
   - name: nodegroup-1
     instanceType: ["m5.large", "c3.large","c4.large","c5.large"]
     desiredCapacity: 2 # Desired number of nodes
