@@ -32,9 +32,9 @@ spec:
         #   periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: //xxx
+            path: /healyh
             port: 80
-          initialDelaySeconds: 5
+          initialDelaySeconds: 20
           periodSeconds: 3
 ---
 apiVersion: v1
