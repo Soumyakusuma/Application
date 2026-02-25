@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+namespace: scaling
 metadata:
   name: hpa-demo
 spec:
@@ -22,3 +23,25 @@ spec:
             cpu: 100m
           limits:
             cpu: 200m
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-demo
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: hpa-demo
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+
+
