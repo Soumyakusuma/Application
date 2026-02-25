@@ -9,6 +9,4 @@ managedNodeGroups:
     desiredCapacity: 2 # Desired number of nodes
     minSize: 1
     maxSize: 3
-    ssh:
-      allow: true
     spot: true
