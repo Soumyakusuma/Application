@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: probestest
+  namespace: probes
+  labels: #repica set labels
+    name: probestestt
+    environment: dev
+    type: app
+spec:
+  replicas: 1
+  selector: # These are the labels replica set use to create pod replicas, this should match pod labels
+    matchLabels:
+      name: probestest
+      environment: dev
+      type: app
+  template: # This is pod definition
+    metadata:
+      name: probestest
+      labels: 
+        name: probestest
+        environment: dev
+        type: app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: probestest
+  namespace: probes
+  labels: 
+    name: probestest
+    environment: dev
+    type: app
+spec:
+  selector:
+    name: probestest
+    environment: dev
+    type: app
+  ports:
+    - protocol: TCP
+      port: 8080 #service port
+      targetPort: 80 #container port
+
+---
+
+
+
