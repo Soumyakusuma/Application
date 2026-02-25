@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
-namespace: scaling
 metadata:
   name: hpa-demo
+  namespace: scaling
 spec:
   replicas: 1
   selector:
