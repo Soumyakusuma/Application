@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vpa-demo
+  namespace: scaling
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vpa-demo
+  template:
+    metadata:
+      labels:
+        app: vpa-demo
+    spec:
+      containers:
+      - name: vpa-demo
+        image: nginx
+        resources:
+          requests:
+            cpu: 50m
+            memory: 50Mi
+
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: vpa-demo
+  namespace: scaling
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: vpa-demo
+  updatePolicy:
+    updateMode: "Recreate"
