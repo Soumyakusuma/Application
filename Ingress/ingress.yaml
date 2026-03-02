@@ -19,7 +19,7 @@ spec:
             service:
               name: app1-ingress
               port:
-                number: 80
+                number: 8080
 
         - pathType: Prefix
           path: "/"
@@ -27,6 +27,6 @@ spec:
             service:
               name: app2-ingress
               port:
-                number: 80
+                number: 8080
 
         
