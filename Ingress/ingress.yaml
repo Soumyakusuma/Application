@@ -15,7 +15,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: app1_ingress
+            name: app1-ingress
             port:
               number: 80
 
@@ -23,7 +23,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: app2_ingress
+            name: app2-ingress
             port:
               number: 80
 
