@@ -9,22 +9,22 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: app1-ingress
-            port:
-              number: 80
+    - http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: app1-ingress
+              port:
+                number: 80
 
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: app2-ingress
-            port:
-              number: 80
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: app2-ingress
+              port:
+                number: 80
 
         
