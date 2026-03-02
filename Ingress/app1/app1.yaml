@@ -42,7 +42,7 @@ metadata:
     environment: dev
 spec:
   selector:
-    name: app1-ingress
+    name: app1
     environment: dev
     type: app
   ports:
