@@ -14,7 +14,7 @@ spec:
     - http:
         paths:
         - pathType: Prefix
-          path: "/app1"
+          path: "/"
           backend:
             service:
               name: app1-ingress
@@ -22,7 +22,7 @@ spec:
                 number: 8080
 
         - pathType: Prefix
-          path: "/app2"
+          path: "/"
           backend:
             service:
               name: app2-ingress
