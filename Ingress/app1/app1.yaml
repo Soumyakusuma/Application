@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: app1
-        image: app1:v1
+        image: app1:latest
 ---
 apiVersion: v1
 kind: Service
