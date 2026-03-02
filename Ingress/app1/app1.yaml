@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: app1
-        image: app1:latest
+        image: 811221506261.dkr.ecr.us-east-1.amazonaws.com/ingress/app:v1
 ---
 apiVersion: v1
 kind: Service
